@@ -6,3 +6,5 @@ Android I/O redirection implementation, using seccomp user notify mechanism
 * 至少需要 **5.10** 版本内核
 * This example is only tested on x86_64 and riscv64 architectures, and may not work on arm64 architecture
 * 本示例仅在 x86_64 与 riscv64 架构上测试通过，arm64 架构可能无法运行
+
+[Download example](https://github.com/eirv/SimpleIORedirect/raw/main/app-debug.apk)
