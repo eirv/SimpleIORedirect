@@ -11,3 +11,5 @@ Android I/O redirection implementation, using seccomp user notify mechanism
 * 本示例目前仅支持 debug 构建
 
 [Download example](https://github.com/eirv/SimpleIORedirect/raw/main/app-debug.apk)
+
+提示: ~~稍加修改可以对最新某数字加固实现过签~~
