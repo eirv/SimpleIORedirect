@@ -1,9 +1,10 @@
 package io.github.eirv.simpleioredirect;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.io.File;
@@ -22,13 +23,13 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        File redirection = new File(getDataDir(), "redirection.txt");
+        var redirection = new File(getDataDir(), "redirection.txt");
         try {
             Files.write(redirection.toPath(), "This is redirection.txt".getBytes());
         } catch (IOException ignored) {
         }
 
-        ActionBar actionBar = getActionBar();
+        var actionBar = getActionBar();
         if (actionBar != null) {
             actionBar.setSubtitle(TARGET_PATH);
         }
@@ -42,8 +43,11 @@ public class MainActivity extends Activity {
                     .show();
         }
 
-        TextView textView = new TextView(this);
+        var textView = new TextView(this);
         textView.setText(readFile(TARGET_PATH));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+            textView.setFitsSystemWindows(true);
+        }
         setContentView(textView);
     }
 
@@ -51,7 +55,7 @@ public class MainActivity extends Activity {
         try {
             return new String(Files.readAllBytes(Paths.get(path)));
         } catch (IOException e) {
-            return e.toString();
+            return Log.getStackTraceString(e);
         }
     }
 

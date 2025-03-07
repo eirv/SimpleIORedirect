@@ -4,13 +4,13 @@ plugins {
 
 android {
     namespace 'io.github.eirv.simpleioredirect'
-    compileSdk 34
-    ndkVersion '28.0.11639224'
+    compileSdk 35
+    ndkVersion '29.0.13113456'
 
     defaultConfig {
         applicationId "io.github.eirv.simpleioredirect"
-        minSdk 30
-        targetSdk 34
+        minSdk 31
+        targetSdk 35
         versionCode 1
         versionName "1.0"
 
@@ -38,8 +38,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     packagingOptions {
         jniLibs.useLegacyPackaging true
